@@ -1,0 +1,24 @@
+Readme for CMPSCI 4760 Assignment 4
+
+Author : Scott Tabaka
+Date Due : 3/30/2020
+Course : CMPSCI 4760
+Purpose : This program simulates an operating system process scheduling.
+
+************Instructions**********
+1. To compile: make
+2. To run: oss
+3. To clean up: make clean
+
+************Output****************
+logfileX.log     where X is a numerical value starting from 0(every 10k lines a new file will be created)
+
+************Method of preventing starvation*************
+Using the definition "#define STARVATIONPREVENTIONLIMITSEC 15" to set the wait limit of a process to 15 simulated
+seconds, each process in priority queue levels 2 and 3 are checked for their current wait time since last being
+processed.  Once this limit is reached the process is taken from whatever priority queue it was in(2 or 3) and placed
+in the highest USER process priority queue(1 in this program,since 0 is only for REAL-TIME processes).
+
+*******Other Constants********
+Probability of a process termination = 2%
+Probability of a process being a USER process = 90%
